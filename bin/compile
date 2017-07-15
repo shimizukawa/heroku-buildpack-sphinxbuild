@@ -1,0 +1,10 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+
+echo "-----> cloning sphinx document project"
+cd $BUILD_DIR
+git clone $GIT_PATH repo
+
+echo "-----> building document"
+sphinx-build -M html repo/$SOURCE_PATH build
